@@ -1,0 +1,78 @@
+﻿@model SignupViewModel
+
+@{
+    ViewData["Title"] = "Signup";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="~/css/signup.css">
+</head>
+<body>
+    <div class="mantine-Paper-root mantine-rhlh7q snipcss-jkT9c cardDesign">
+        <div class="mantine-Center-root">
+            <h1 class="titleClass">Signup</h1>
+        </div>
+        <form method="post" action="/Home/Signup">
+            <div class="mantine-InputWrapper-root mantine-TextInput-root auth-input mantine-lkvjm5">
+                <label class="mantine-InputWrapper-label mantine-TextInput-label mantine-14c6w46" for="mantine-p2xtwzocw" id="mantine-p2xtwzocw-label">
+                    First Name
+                </label>
+                <div class="mantine-Input-wrapper mantine-TextInput-wrapper mantine-7c7vou">
+                    <input class="mantine-Input-input mantine-TextInput-input mantine-1dvvmf2" id="firstName" name="FirstName" type="text" placeholder="First Name" aria-invalid="false" value="">
+                    <label id="firstName-validation"></label>
+                </div>
+            </div>
+            <div class="mantine-InputWrapper-root mantine-TextInput-root auth-input mantine-lkvjm5">
+                <label class="mantine-InputWrapper-label mantine-TextInput-label mantine-14c6w46" for="mantine-p2xtwzocw" id="mantine-p2xtwzocw-label">
+                    Last Name
+                </label>
+                <div class="mantine-Input-wrapper mantine-TextInput-wrapper mantine-7c7vou">
+                    <input class="mantine-Input-input mantine-TextInput-input mantine-1dvvmf2" id="lastName" name="LastName" type="text" placeholder="Last Name" aria-invalid="false" value="">
+                </div>
+                <label id="lastName-validation"></label>
+            </div>
+            <div class="mantine-InputWrapper-root mantine-TextInput-root auth-input mantine-lkvjm5">
+                <label class="mantine-InputWrapper-label mantine-TextInput-label mantine-14c6w46" for="mantine-p2xtwzocw" id="email-label">
+                    Email
+                </label>
+                <label id="email-valdidation"></label>
+                <div class="mantine-Input-wrapper mantine-TextInput-wrapper mantine-7c7vou">
+                    <input class="mantine-Input-input mantine-TextInput-input mantine-1dvvmf2" id="email" name="Email" type="email" placeholder="Email" aria-invalid="false" value="">
+                </div>
+                <label id="email-validation"></label>
+            </div>
+            <div class="mantine-InputWrapper-root mantine-TextInput-root auth-input mantine-1ev9jv7">
+                <label class="mantine-InputWrapper-label mantine-TextInput-label mantine-14c6w46" for="mantine-wtibtw2dr" id="mantine-wtibtw2dr-label">
+                    Password
+                </label>
+                <div class="mantine-Input-wrapper mantine-TextInput-wrapper mantine-7c7vou">
+                    <input class="mantine-Input-input mantine-TextInput-input mantine-1dvvmf2" id="password" name="UserPassword" type="password" placeholder="Password" aria-invalid="false" value="">
+                </div>
+                <label id="password-validation"></label>
+            </div>
+            <div class="mantine-InputWrapper-root mantine-TextInput-root auth-input mantine-1ev9jv7">
+                <label class="mantine-InputWrapper-label mantine-TextInput-label mantine-14c6w46" for="mantine-vgq6fy6ci" id="mantine-vgq6fy6ci-label">
+                    Confirm Password
+                </label>
+                <div class="mantine-Input-wrapper mantine-TextInput-wrapper mantine-7c7vou">
+                    <input class="mantine-Input-input mantine-TextInput-input mantine-1dvvmf2" id="confirmPassword" name="UserConfirmPassword" type="password" placeholder="Confirm password" aria-invalid="false" value="">
+                </div>
+                <label id="confirmPassword-validation"></label>
+            </div>
+            <div class="mantine-Center-root mantine-jk4w6p">
+                <button class="mantine-UnstyledButton-root mantine-Button-root mantine-z9z3e7" type="submit" data-button="true">
+                    <div class="mantine-1wpc1xj mantine-Button-inner">
+                        <span class="mantine-1ryt1ht mantine-Button-label">
+                            Sign me up
+                        </span>
+                    </div>
+                </button>
+            </div>
+        </form>
+    </div>
+    <script src="~/js/signup.js" asp-append-version="true"></script>
+</body>
+</html> 

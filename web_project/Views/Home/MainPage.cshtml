@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    var loggedIn = User.Identity.IsAuthenticated.ToString().ToLower();
+}
+
+<script>
+    var userLoggedIn = @Html.Raw(loggedIn);
+</script>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main Page</title>
+    <link rel="stylesheet" href="~/css/mainpage.css" />
+</head>
+
+<body>
+
+    <ul class="menuList">
+        <li class="menuListItem"><a class="active" href="https://localhost:7235/">Main Page</a></li>
+        <li class="menuListItem"><a href="/Home/Profile">Profile</a></li>
+        <li class="menuListItem"><a href="/Home/Calendar">Calendar</a></li>
+        <li class="menuListItem"><a href="/Home/Map">Campus map</a></li>
+        <li class="menuListItem"><a href="/Home/Services">Services & Facilities</a></li>
+    </ul>
+
+    <div class="loginButtonContainer">
+        <button class="loginButton" onclick="toggleLogin()">Login</button>
+        @* <button class="loginButton">Login</button> *@
+    </div> 
+
+    <div class="signupButtonContainer">
+        <button class="signupButton" onclick="toggleSignup()">Signup</button>
+        @* <button class="signupButton">Signup</button> *@
+    </div>
+    
+
+    <div class="pageContent">
+        <div class="section">
+            
+        </div>
+
+        <div class="section">
+            <div class="card1Style">
+                <h3>News</h3>
+                <input type="text" class="searchbar" placeholder="Search">
+                <div class="newsContainer">
+                    <ul id="news-body"  class="newsList">
+                        
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card2Style">
+                <p class="newsletterBlock">
+                    <img class="newsletterIcon" src="~/pictures/newsletter_icon.png">
+                    <h3>Subscribe to our Newsletter</h3>
+                </p>
+                <label for="email"></label>
+                <input type="email" id="email" placeholder="Email">
+                <div id="email-validation"></div>
+                <button type="submit" id="submitButton">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer_class">
+        <div class="column_icon">
+            <img class="icons" src="~/pictures/gmail.png" />
+        </div>
+        <div class="column_icon">
+            <img class="icons" src="~/pictures/moodle.png" />
+        </div>
+        <div class="column_icon">
+            <img class="icons" src="~/pictures/library.png" />
+        </div>
+        <div class="column_icon">
+            <img class="icons" src="~/pictures/facebook.png" />
+        </div>
+        <div class="column_icon">
+            <img class="icons" src="~/pictures/instagram.png" />
+        </div>
+        <div class="column_icon">
+            <img class="icons" src="~/pictures/discord.png" />
+        </div>
+    </footer>
+
+    <script src="~/js/mainpage.js" asp-append-version="true"></script>
+
+</body>
+
+</html>

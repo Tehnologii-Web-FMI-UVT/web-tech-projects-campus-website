@@ -1,0 +1,173 @@
+﻿@{
+    ViewData["Title"] = "Services";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/services.css">
+    <title>Services</title>
+</head>
+<body>
+
+    <ul class="menuList">
+        <li class="menuListItem"><a href="https://localhost:7235/">Main Page</a></li>
+        <li class="menuListItem"><a href="/Home/Profile">Profile</a></li>
+        <li class="menuListItem"><a href="/Home/Calendar">Calendar</a></li>
+        <li class="menuListItem"><a href="/Home/Map">Campus map</a></li>
+        <li class="menuListItem"><a class="active"  href="#">Services & Facilities</a></li>
+    </ul>
+
+    <div class="loginButtonContainer">
+        <button class="loginButton" onclick="toggleLogin()">Login</button>
+    </div>
+
+    <div class="signupButtonContainer">
+        <button class="signupButton" onclick="toggleSignup()">Signup</button>
+    </div>
+
+    <div class="content">
+
+        @* <div class="profile-container">
+        <div class="profile-picture">
+        <img src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAxL3JtNjA5LXNvbGlkaWNvbi13LTAwMi1wLnBuZw.png" alt="Profile Picture">
+        </div>
+        <div class="user-info">
+        <div class="username">Username</div>
+        <div class="student-id">Student_ID</div>
+        </div>
+        </div>
+        <button id="logout-btn">Logout</button> *@
+
+   <div class="content">
+        <div id="services-title">
+            <h2>Services and Facilities</h2>
+        </div>
+
+        <div class="box-grid">
+            <div class="box box1">
+                <a href="#" onclick="toggleBox('residence-halls'); return false;">
+                    <div class="box-content">
+                        <h3>Residence Halls</h3>
+                        <p>Your Campus Home</p>
+                    </div>
+                </a>
+                <div id="residence-halls" class="box-details">
+                    <p>Living on campus is about connection: to friends, resources, and great food. Our residence halls are designed to enhance your life on campus, with live-in faculty members, locally sourced and organic food, connections to tutors and advisors—even communal kitchens, music practice rooms, and a makerspace. In short, everything you need to start your college career right at home. Apply to one of our <a href="#" style="color: purple; text-decoration: underline;">Residence Halls</a></p>
+                </div>
+            </div>
+            <div class="box box2">
+                <a href="#" onclick="toggleBox('dining-services'); return false;">
+                    <div class="box-content">
+                        <h3>Dining Services</h3>
+                        <p>Dining Options, Plans, and Dietary Accomodations</p>
+                    </div>
+                </a>
+                <div id="dining-services" class="box-details">
+                    <>From our focus on nutrition and dedication to sustainability to convenient meal plans and high standards for food safety, we continually strive to deliver the high-quality dining services our university community deserves. <a href="#" style="color: purple; text-decoration: underline;">More Details</a></p>
+                </div>
+            </div>
+            <div class="box box3">
+                <a href="#" onclick="toggleBox('parking-information'); return false;">
+                    <div class="box-content">
+                        <h3>Parking Information</h3>
+                        <p>Parking Made Simple: Locations and Policies.</p>
+                    </div>
+                </a>
+                <div id="parking-information" class="box-details">
+                    <p>Off Peak Parking – After 4 p.m., permit holders may park in these designated areas per permit type. Off Peak parking opportunities expire weekdays at 7 a.m. Vehicles are subject to citation/tow if parked outside of their assigned permit area weekdays from 7 a.m. to 4 p.m.</p>
+                    <p>Perimeter permit holders (PR) may park in West Parking.</p>
+                    <p>West Parking permit holders (WP) may park in Faculty/Staff lots and Commuter lots.</p>
+                    <p>Faculty/Staff permit holders (FS) may park in Proximity lots.</p>
+                    <p>Proximity permits holders (PX) may park in Proximity lots outside of their assigned Proximity lot.</p>
+                    <p>*You may not park up to the following spaces: University Invited guests, 2 hour metered areas, and 24/7 reserved spaces.</p>
+                </div>
+            </div>
+            <div class="box box4">
+                <a href="#" onclick="toggleBox('events-meeting-spaces'); return false;">
+                    <div class="box-content">
+                        <h3>Events and Meeting Spaces</h3>
+                        <p>Event Venues and Reservation Procedures</p>
+                    </div>
+                </a>
+                <div id="events-meeting-spaces" class="box-details">
+                    <p><strong>Meeting spaces should be the right size, in a preferred location, and within budget. When you can closely align the setting to the program objectives, you'll enhance the guest experience in a very profound way.</strong>
+                    A space must suit both program and guest needs. Along with ADA compliance and transportation accessibility, there are many other considerations. Will guests have room to work? Does the setting fit your conference or event?
+Based on your program needs and agenda, our planners can ensure the right mix of rooms is available. We carefully evaluate a space's layout, speaker views, obstructions, and anticipate any bottlenecks that could arise. We’ll also gauge the helpfulness of venue staff and consider contacting references. 
+<strong>Our Services</strong>
+<ul>
+    <li>* Handle venue planning and logistics</li>
+    <li>* Conduct site visits and provide evaluations</li>
+    <li>* Handle equipment and furniture requests</li>
+    <li>* Coordinate set-up logistics</li>
+</ul>
+                </div>
+            </div>
+            <div class="box box5">
+                <a href="#" onclick="toggleBox('transportation-services'); return false;">
+                    <div class="box-content">
+                        <h3>Transportation Services</h3>
+                        <p>Easy Transport Options</p>
+                    </div>
+                </a>
+                <div id="transportation-services" class="box-details">
+                    <p><strong>Holiday office hours and transit impacts</strong></p>
+                    Legal holidays on Dec. 25, Jan. 1, and Jan. 15 will cause Transportation Services office closures, reduced Madison Metro Transit service, and other service reductions. There will be additional Transportation Services office closures due to construction in the WARF Building.</p>
+                    <p><strong>Winter Commencement parking and transportation information</strong></p>
+                    <p>Many campus parking lots will be free beginning Saturday, Dec. 16 through Sunday, Dec. 17, and a shuttle near the Kohl Center will run every 10 minutes Sunday morning into early afternoon.</p>
+                    <p>
+                    <strong>Know before you go: 2023-24 Kohl Center and LaBahn Arena winter events</strong></p>
+                    Several construction projects may impact event travel this winter. If you’re attending an event, please note impacted streets and recommended travel routes to certain lots.</p>
+                    <p><strong>Real-time bus arrival displays and lighting to improve travel experience on campus</strong></p>
+                    <p>One-third of campus bus shelters are now equipped with real-time bus arrival displays and lights to improve the ease and safety of campus bus travel. Learn what to expect from the real-time displays when traveling around campus by bus.</p>
+                </div>
+            </div>
+            <div class="box box6">
+                <a href="#" onclick="toggleBox('health-wellness-services'); return false;">
+                    <div class="box-content">
+                        <h3>Health and Wellness services</h3>
+                        <p>Supporting Health and Wellness on Campus</p>
+                    </div>
+                </a>
+                <div id="health-wellness-services" class="box-details">
+                    <p>Health & Wellness offers an appointment-based medical clinic for all registered part-time and full-time students at the University. <p>
+                        Health & Wellness offers an appointment-based medical clinic for all registered part-time and full-time students at the University. Urgent problems such as infections or injuries can often be seen the same day. Appointments can also be booked for non-urgent medical issues. Patients may see a physician of a specific gender and may also ask to see the same doctor for each visit. 
+                        <a href="#">
+                            <div class="clickable-box">
+                                <p>Make an Appointment</p>
+                            </div>
+                        </a>
+                    </p> </p>
+                </div>
+            </div>
+        </div>
+
+    <footer class="footer_class">
+        <div class="column_icon">
+            <img class="icons" src="~/pictures/gmail.png" />
+        </div>
+        <div class="column_icon">
+            <img class="icons" src="~/pictures/moodle.png" />
+        </div>
+        <div class="column_icon">
+            <img class="icons" src="~/pictures/library.png" />
+        </div>
+        <div class="column_icon">
+            <img class="icons" src="~/pictures/facebook.png" />
+        </div>
+        <div class="column_icon">
+            <img class="icons" src="~/pictures/instagram.png" />
+        </div>
+        <div class="column_icon">
+            <img class="icons" src="~/pictures/discord.png" />
+        </div>
+    </footer>
+
+
+    <script src="~/js/services.js" asp-append-version="true"></script>
+
+</body>
+</html>

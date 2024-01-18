@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+@if (TempData["AlertMessage"] != null)
+{
+    <script>
+        alert('@TempData["AlertMessage"]')
+    </script>
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="google-signin-client_id" content="381620296700-59jg0flooq560phmkkjtcmsoaq81qdtr.apps.googleusercontent.com">
+    <link rel="stylesheet" href="~/css/login.css">
+</head>
+<body>
+    <div class="mantine-Paper-root mantine-rhlh7q snipcss-jkT9c cardDesign" >
+        <div class="mantine-Center-root">
+            <h1 class="titleClass">Login</h1>
+        </div>
+
+        <form method="post" action="/Home/Login">
+            <div class="mantine-InputWrapper-root mantine-TextInput-root auth-input mantine-lkvjm5">
+                <label class="mantine-InputWrapper-label mantine-TextInput-label mantine-14c6w46" for="mantine-p2xtwzocw" id="email-label">
+                    Email
+                </label>
+                <label id="email-valdidation"></label>
+                <div class="mantine-Input-wrapper mantine-TextInput-wrapper mantine-7c7vou">
+                    <input class="mantine-Input-input mantine-TextInput-input mantine-1dvvmf2" id="email" name="Email" type="email" placeholder="Email" aria-invalid="false">
+                </div>
+                <label id="email-validation"></label>
+            </div>
+            <div class="mantine-InputWrapper-root mantine-TextInput-root auth-input mantine-1ev9jv7">
+                <label class="mantine-InputWrapper-label mantine-TextInput-label mantine-14c6w46" for="mantine-wtibtw2dr" id="mantine-wtibtw2dr-label">
+                    Password
+                </label>
+                <div class="mantine-Input-wrapper mantine-TextInput-wrapper mantine-7c7vou">
+                    <input class="mantine-Input-input mantine-TextInput-input mantine-1dvvmf2" id="password" name="UserPassword" type="password" placeholder="Password" aria-invalid="false">
+                </div>
+                <label id="password-validation"></label>
+            </div>
+            <div class="mantine-Center-root mantine-jk4w6p">
+                <button class="mantine-UnstyledButton-root mantine-Button-root mantine-z9z3e7" type="submit" data-button="true">
+                    <div class="mantine-1wpc1xj mantine-Button-inner">
+                        <span class="mantine-1ryt1ht mantine-Button-label">
+                            Login
+                        </span>
+                    </div>
+                </button>
+            </div>
+
+            <div class="mantine-Center-root mantine-jk4w6p">
+                <div class="mantine-Checkbox-root">
+                    <input class="mantine-Checkbox-input" type="checkbox" id="rememberMe" name="RememberMe">
+                    <label class="mantine-Checkbox-label" for="rememberMe">
+                        Remember Me
+                    </label>
+                </div>
+            </div>
+        </form>
+        <div class="colorSignUpAlternativeDiv">
+            <p>Don't have an account? <a href="~/Home/Signup" class="colorSignUpAlternative">Sign up</a></p>
+        </div>
+
+    </div>
+
+    <script src="~/js/login.js" asp-append-version="true"></script>
+</body>
+</html>

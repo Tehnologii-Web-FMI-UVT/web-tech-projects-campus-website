@@ -1,0 +1,21 @@
+* {
+    overflow-x: hidden;
+}
+
+/*.footer_class {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+}
+
+.icons {
+    height: 30px;
+}*/
+
+@media screen and (min-width: 500px) {
+    .column_icon {
+        width: 100%;
+    }
+}
