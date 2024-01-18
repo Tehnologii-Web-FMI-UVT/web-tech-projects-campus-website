@@ -1,0 +1,19 @@
+﻿.profile-picture-container {
+    position: relative;
+    width: 1px;
+    height: 1px;
+}
+
+.profile-picture {
+    width: 1px;
+    height: 1px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}

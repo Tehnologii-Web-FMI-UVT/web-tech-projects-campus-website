@@ -1,0 +1,252 @@
+﻿*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.pageContent {
+    display: flex;
+    flex-direction: column;
+
+    /* Set the height of the pageContent to 100% of the viewport height */
+    height: 100vh;
+}
+
+/* sections css start */
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1; 
+    margin-left: 25%;
+}
+
+.section:nth-child(1) {
+    background-color: white;
+}
+.section:nth-child(2)
+{
+    background-color: white;
+    margin-bottom: 40px;
+}
+/* sections css end */
+
+
+/* menu css start */
+.menuList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    background-color: white;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.menuListItem a {
+    display: block;
+    color: #000;
+    padding: 8px 16px 30px;
+    text-decoration: none;
+}
+
+.menuListItem a.active {
+    background-color: #04AA6D;
+    color: white;
+    border-radius: 10px;
+}
+
+.menuListItem a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+    border-radius: 10px;
+}
+/* menu css end */
+
+
+/* column cards css start*/
+.card1Style {
+    box-shadow: 10px 10px;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    height: 300px;
+    overflow-y: hidden;
+}
+
+.card2Style {
+    box-shadow: 10px 10px;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+    margin-bottom: 20px;
+    margin-right: 30px;
+    margin-left: 20px;
+    height: 300px;
+}
+
+@media screen and (min-width: 600px) {
+    .section {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .card1Style,
+    .card2Style {
+        width: 48%;
+        overflow-y: hidden;
+    }
+}
+/* column cards css end*/
+
+/* icons css start */
+.footer_class {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+.column_icon{
+    margin: 0 10px;
+}
+
+.icons {
+    height: 30px;
+}
+/* icons css end */
+
+/* news list & newsletter css start */
+#email,
+.searchbar {
+    display: block;
+    min-width: 100%;
+    margin: auto;
+    border: 1px solid #F1F1F1;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin-bottom: 2px;
+}
+
+#submitButton {
+    border-radius: 10px;
+    border: 1px solid black;
+    font-size: 16px;
+    background-color: red;
+    width: 50%;
+    cursor: pointer;
+    margin-top: 60px;
+    padding: 10px;
+}
+
+#submitButton.invalid{
+    background-color: red;
+}
+
+#submitButton.valid{
+    background-color: green;   
+}
+
+.newsContainer {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.newsList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+}
+
+.newsList li a{
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 8px;
+}
+
+.newsList li{
+    margin-bottom: 12px;
+}
+
+.newsList li:hover{
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+.newsList li p{
+    margin:0;
+}
+/* news list & newsletter css end*/
+
+/* login button css start */
+.loginButtonContainer {
+    position: fixed;
+    top: 20px;
+    right: 140px;
+    overflow: hidden;
+    filter: drop-shadow(0.13rem 0.15rem 0.2rem rgba(0, 0, 0, 0.6));
+}
+
+.loginButton {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.loginButton:hover {
+    background-color: #2980b9;
+
+}
+/* login button css end */
+
+/* signup button css start*/
+.signupButtonContainer {
+    position: fixed;
+    top: 20px;
+    right: 40px;
+    overflow: hidden;
+    filter: drop-shadow(0.13rem 0.15rem 0.2rem rgba(0, 0, 0, 0.6));
+}
+
+.signupButton {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.signupButton:hover {
+    background-color: #2980b9;
+
+}
+/* signup button css end */
+
+.newsletterIcon {
+    height: 40px;
+    width: 40px;
+}
+
+. newsletterBlock {
+    display: inline-block;
+}

@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - web_project</title>
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+
+<body>
+    @* <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px; height: 100vh; position: fixed;">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32">
+                <use xlink:href="#bootstrap"></use>
+            </svg>
+            <span class="fs-4">Logo</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="path/to/news" class="nav-link" aria-current="page">
+                    News
+                </a>
+            </li>
+            <li>
+                <a href="path/to/calendar" class="nav-link">
+                    Calendar
+                </a>
+            </li>
+            <li>
+                <a href="path/to/map" class="nav-link active">
+                    Campus map
+                </a>
+            </li>
+            <li>
+                <a href="path/to/facilities" class="nav-link">
+                    Campus facilities
+                </a>
+            </li>
+            <li>
+                <a href="path/to/courses" class="nav-link">
+                    Courses
+                </a>
+            </li>
+        </ul>
+    </div> *@
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    @* <footer class="footer_class">
+        <div class="row">
+            <div class="column_icon">
+                <img class="icons" src="~/pictures/gmail.png" />
+            </div>
+            <div class="column_icon">
+                <img class="icons" src="~/pictures/moodle.png" />
+            </div>
+            <div class="column_icon">
+                <img class="icons" src="~/pictures/library.png" />
+            </div>
+            <div class="column_icon">
+                <img class="icons" src="~/pictures/facebook.png" />
+            </div>
+            <div class="column_icon">
+                <img class="icons" src="~/pictures/instagram.png" />
+            </div>
+            <div class="column_icon">
+                <img class="icons" src="~/pictures/discord.png" />
+            </div>
+        </div>
+    </footer> *@
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

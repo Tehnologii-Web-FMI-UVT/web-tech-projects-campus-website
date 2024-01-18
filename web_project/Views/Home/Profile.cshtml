@@ -1,0 +1,147 @@
+﻿@model SignupViewModel
+@{
+    ViewData["Title"] = "Profile";
+}
+@if (TempData["AlertMessageProfile"] != null)
+{
+    <script>
+        alert('@TempData["AlertMessageProfile"]')
+        window.location.href = "https://localhost:7235";
+    </script>
+
+}
+
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Profile</title>
+
+    <link rel="stylesheet" src="~/css/profile.css" />
+
+</head>
+
+
+<body>
+   
+        <input type="hidden" name="id">
+        <div class="col-md-9 offset-md-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 mt-3">
+                        <form method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="profilePicture">Profile Picture</label>
+                                <div class="profile-picture-container">
+                                    <input type="file" id="profilePicture" name="ProfilePicture" accept="image/*"
+                                           style="display: none;">
+                                    <label for="profilePicture">
+                                        <img id="output" src="~/pictures/profile.png" alt="Profile Picture"
+                                             class="profile-picture">
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <img src="~/pictures/name.png" alt="Icon" class="small-icon">
+                                        </span>
+                                    </div>
+                                    <input type="text" id="firstName" name="FirstName" class="form-control"
+                                            placeholder="First name" readonly disabled value="@Model.FirstName">
+                                </div>
+                            </div>
+                            
+
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <img src="~/pictures/name.png" alt="Icon">
+                                        </span>
+                                    </div>
+                                    <input type="text" id="lastName" name="LastName" class="form-control"
+                                           placeholder="Last name" readonly disabled value="@Model.LastName">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <img src="~/pictures/email.png" alt="Icon">
+                                        </span>
+                                    </div>
+                                    <input type="email" id="email" name="Email" class="form-control" 
+                                           placeholder="Email" readonly disabled value="@Model.Email">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <img src="~/pictures/password.png" alt="Icon">
+                                        </span>
+                                    </div>
+                                    <input type="password" id="password" name="UserPassword" class="form-control"
+                                           placeholder="Password" readonly disabled value="@Model.UserPassword">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="button" id="change">Change</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="newPasswordFields" style="display: none; margin-bottom: 20px;">
+                                <input type="password" id="newPassword" name="NewPassword" class="form-control mt-2"
+                                       placeholder="New Password">
+                                <input type="password" id="confirmPassword" name="UserConfirmPassword" class="form-control mt-2"
+                                       placeholder="Confirm Password">
+                            </div>
+
+                            <div>
+                                <button type="submit" class="btn btn-success mb-3">Save</button>
+                            </div>
+                    </form>
+                            <div class="d-flex justify-content-between">
+                                <button type="button" class="btn btn-secondary"
+                                        onclick="redirectToHomePage()">
+                                    Cancel
+                                </button>
+                                <button type="button" class="btn btn-danger" @* onclick="location.href='/Home/MainPage'" *@>
+                                    Delete
+                                    Account
+                                </button>
+                            </div>
+                        
+                    </div>
+
+                    <div class="col-md-3 mt-3">
+                        <button class="btn btn-danger btn-block" style="width: 40px;" onclick="redirectToHomePage()">
+                            X
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <script src="~/js/profile.js"></script>
+
+</body>
+
+</html>

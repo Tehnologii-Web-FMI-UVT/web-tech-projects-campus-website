@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Map";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/map.css">
+    <title>Map</title>
+</head>
+<body>
+    <ul class="menuList">
+        <li class="menuListItem"><a href="https://localhost:7235/">Main Page</a></li>
+        <li class="menuListItem"><a href="/Home/Profile">Profile</a></li>
+        <li class="menuListItem"><a href="/Home/Calendar">Calendar</a></li>
+        <li class="menuListItem"><a class="active" href="/Home/Map">Campus map</a></li>
+        <li class="menuListItem"><a href="/Home/Services">Services & Facilities</a></li>
+    </ul>
+
+    <div class="loginButtonContainer">
+        <button class="loginButton" onclick="toggleLogin()">Login</button>
+    </div>
+
+    <div class="signupButtonContainer">
+        <button class="signupButton" onclick="toggleSignup()">Signup</button>
+    </div>
+
+    <div class="title-subtitle-box">
+        <div class="title">Campus Map</div>
+        <div class="subtitle">Main Buildings and Faculties of the University shown on the map</div>
+    </div>
+
+    <div class="options-container">
+        <div class="option-box">
+            <label for="location">Location</label>
+            <select id="location" name="location">
+                <option value="">Select a location</option>
+                <option value="Main Building">Main Building</option>
+                <option value="Stadium">Stadium</option>
+                <option value="Science Faculty">Science Faculty</option>
+                <option value="Library">Library</option>
+                <option value="University Canteen">University Canteen</option>
+            </select>
+        </div>
+
+        <div class="option-box">
+            <label for="destination">Destination</label>
+            <select id="destination" name="destination">
+                <option value="">Select a destination</option>
+                <option value="Main Building">Main Building</option>
+                <option value="Stadium">Stadium</option>
+                <option value="Science Faculty">Science Faculty</option>
+                <option value="Library">Library</option>
+                <option value="University Canteen">University Canteen</option>
+            </select>
+        </div>
+    </div>
+    <div class="image-container">
+        <img src="~/pictures/1.jpg" alt="Image Description">
+    </div>
+
+    <script src="~/js/map.js" asp-append-version="true"></script>
+</body>
+</html>

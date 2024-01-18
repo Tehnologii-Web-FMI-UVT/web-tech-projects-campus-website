@@ -1,0 +1,105 @@
+﻿@model SignupViewModel
+@{
+    ViewData["Title"] = "Calendar";
+}
+@if (TempData["AlertMessageProfile"] != null)
+{
+    <script>
+        alert('@TempData["AlertMessageProfile"]')
+        window.location.href = "https://localhost:7235";
+    </script>
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+
+    <link rel="stylesheet" href="~/css/calendar.css">
+</head>
+<body>
+    <ul class="menuList">
+        <li class="menuListItem"><a href="https://localhost:7235/">Main Page</a></li>
+        <li class="menuListItem"><a href="/Home/Profile">Profile</a></li>
+        <li class="menuListItem"><a class="active" href="/Home/Calendar">Calendar</a></li>
+        <li class="menuListItem"><a href="/Home/Map">Campus map</a></li>
+        <li class="menuListItem"><a href="/Home/Services">Services & Facilities</a></li>
+    </ul>
+
+    <div class="loginButtonContainer">
+        <button class="loginButton" onclick="toggleLogin()">Login</button>
+    </div>
+
+    <div class="signupButtonContainer">
+        <button class="signupButton" onclick="toggleSignup()">Signup</button>
+    </div>
+
+    <div id="container">
+        <div id="header">
+            <div id="monthDisplay"></div>
+            <div>
+                <button id="backButton">Back</button>
+                <button id="nextButton">Next</button>
+            </div>
+        </div>
+
+        <div id="weekdays">
+            <div>Sunday</div>
+            <div>Monday</div>
+            <div>Tuesday</div>
+            <div>Wednesday</div>
+            <div>Thursday</div>
+            <div>Friday</div>
+            <div>Saturday</div>
+        </div>
+
+        <div id="calendar"></div>
+    </div>
+
+    <div id="newEventModal">
+        <h2>New Event</h2>
+
+        <input id="eventTitleInput" placeholder="Event Title" />
+
+        <button id="saveButton">Save</button>
+        <button id="cancelButton">Cancel</button>
+    </div>
+
+    <div id="deleteEventModal">
+        <h2>Event</h2>
+
+        <p id="eventText"></p>
+
+        <button id="deleteButton">Delete</button>
+        <button id="closeButton">Close</button>
+    </div>
+
+    <div id="modalBackDrop"></div>
+
+
+    <footer class="footer_class">
+        <div class="column_icon">
+            <img class="icons" src="~/pictures/gmail.png" />
+        </div>
+        <div class="column_icon">
+            <img class="icons" src="~/pictures/moodle.png" />
+        </div>
+        <div class="column_icon">
+            <img class="icons" src="~/pictures/library.png" />
+        </div>
+        <div class="column_icon">
+            <img class="icons" src="~/pictures/facebook.png" />
+        </div>
+        <div class="column_icon">
+            <img class="icons" src="~/pictures/instagram.png" />
+        </div>
+        <div class="column_icon">
+            <img class="icons" src="~/pictures/discord.png" />
+        </div>
+    </footer>
+
+    <script src="~/js/calendar.js"></script>
+</body>
+</html>
